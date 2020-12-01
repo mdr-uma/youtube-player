@@ -5,6 +5,12 @@ class SearchBar extends React.Component {
         input: "" 
     }
 
+    handleOnChange = (e) => {
+        this.setState({
+            input: e.target.value
+        })
+    }
+
     render() {
         return(
             <div className="search-bar ui segment">
