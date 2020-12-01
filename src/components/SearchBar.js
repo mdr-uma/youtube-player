@@ -11,10 +11,15 @@ class SearchBar extends React.Component {
         })
     }
 
+    handleOnFormSubmit = (e) => {
+        e.preventDefault()
+        
+    }
+
     render() {
         return(
             <div className="search-bar ui segment">
-                <form className="ui form">
+                <form onSubmit={this.handleOnFormSubmit} className="ui form">
                     <div className="field">
                         <label>Search Video</label>
                         <input 
