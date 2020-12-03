@@ -19,7 +19,7 @@ class App extends React.Component {
                 key: KEY
             }
         })
-        
+
         this.setState({
             videos: res.data.items
         })
@@ -29,6 +29,7 @@ class App extends React.Component {
         return(
             <div className="ui container">
                 <SearchBar onFormSubmit={this.onInputSubmit}/>
+                <p>We have found {this.state.videos.length} videos according to your search.</p>
             </div>
         )
     }
