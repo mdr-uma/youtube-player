@@ -5,6 +5,10 @@ import youtube from '../apis/youtube'
 const KEY = 'AIzaSyBx0J-rnLChsu4UTVJX227iXqr1Z9ZcCeI'
 
 class App extends React.Component {
+    state = { 
+        videos: [] 
+    }
+
     onInputSubmit = async input => {
         const res = await youtube.get('/search', {
             params: {
@@ -15,7 +19,10 @@ class App extends React.Component {
                 key: KEY
             }
         })
-        console.log(res.data.items);
+        
+        this.setState({
+            videos: res.data.items
+        })
     }
 
     render() {
