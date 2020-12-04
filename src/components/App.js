@@ -12,6 +12,10 @@ class App extends React.Component {
         selectedVideo: null 
     }
 
+    componentDidMount() {
+        this.onInputSubmit('react tutorial')
+    }
+
     onInputSubmit = async input => {
         const res = await youtube.get('/search', {
             params: {
